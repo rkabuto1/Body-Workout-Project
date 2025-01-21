@@ -1,0 +1,59 @@
+Chest 
+1. Bench Press
+2. Incline Bench Press
+3. Decline Bench Press
+4. Dumbbell Flyes
+5. Cable Crossovers
+6. Chest Dips
+7. Push Ups
+8. Chest Fly Machine
+9. Incline Dumbbell Press
+10. Smith Machine Bench Press
+
+Back 
+1. Pull-Ups
+2. Deadlifts
+3. Barbell Rows
+4. Dumbbell Rows
+5. Lat Pulldowns
+6. T-Bar Rows
+7. Seated Cable Rows
+8. Face Pulls
+9. Pendlay Rows
+10. Reverse Flyes
+
+Bicep 
+1. Barbell Curls
+2. Dumbbell Hammer Curls
+3. Concentration Curls
+4. Preacher Curls
+5. Cable Bicep Curls
+6. Incline Dumbbell Curls
+
+Tricep
+1. Tricep Dips
+2. Close-Grip Bench Press
+3. Overhead Tricep Extension
+4. Tricep Pushdowns
+5. Skull Crushers
+6. Dumbbell Kickbacks
+
+Shoulders
+1. Overhead Press
+2. Dumbbell Lateral Raises
+3. Front Dumbbell Raises
+4. Arnold Press
+5. Rear Delt Flyes
+6. Upright Rows
+
+Legs
+1. Squats
+2. Deadlifts
+3. Leg Press
+4. Lunges
+5. Romanian Deadlifts
+6. Bulgarian Split Squats
+7. Leg Extensions
+8. Hamstring Curls
+9. Calf Raises
+10. Sumo Deadlifts
