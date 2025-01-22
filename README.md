@@ -1,71 +1,156 @@
-# Body-Workout-Project
 
-Updated Project Will Be Pushed Soon.
+# Rick Kabuto's Body Workout Generator
 
-This Project is Old as of Janurary 21st 2025.
-
-## Purpose
-This program, "Rick Kabuto's Body Workout Generator," is designed to create a customized Push-Pull-Legs workout schedule tailored to a user's body type. The program accounts for three body types: Ectomorph, Mesomorph, and Endomorph, each with specific sets and repetitions based on their fitness needs. The exercises are loaded from an external file (`Workout_List.txt`), and the program generates a schedule by randomly selecting exercises for each workout day.
+## Overview
+Rick Kabuto's Body Workout Generator is a Python-based tool designed to create personalized workout schedules and nutritional guidance. It tailors a "Push-Pull-Legs" routine and calorie recommendations based on the user's body type, weight, and muscle gain goals.
 
 ## Features
-- **Body Type Selection:** Users can select their body type using numeric options (1 for Ectomorph, 2 for Mesomorph, and 3 for Endomorph).
-- **Custom Workout Schedule:** Generates a randomized Push-Pull-Legs workout schedule based on the selected body type.
-- **Error Handling:** Prompts users to re-enter input if an invalid option is provided.
-- **Randomized Exercise Selection:** Ensures variety in the workout schedule.
+1. **Personalized Calorie Formula**: Calculates the daily caloric intake required to gain 10-15 pounds of muscle in a specified number of months.
+2. **Custom Workout Schedules**: Generates a weekly "Push-Pull-Legs" workout plan based on the user's body type and predefined exercise categories.
+3. **Body Type Specifics**: Adapts workout intensity (sets and reps) for ectomorphs, mesomorphs, and endomorphs.
+4. **Interactive Input**: Guides users through body type selection, weight input, and fitness goals.
+5. **Dynamic Exercise Selection**: Randomly selects exercises for each workout day to ensure variety.
 
-## How to Run the Program
+---
 
-### Prerequisites
-1. Ensure you have Python 3 installed on your system.
-2. Create a text file named `Workout_List.txt` in the same directory as the script. The file should include workout categories and exercises formatted similarly to the example below:
+## How It Works
 
+### 1. **Calorie Formula Calculation**
+The tool calculates your daily caloric needs using the following formula:
+- **Base Calorie Needs**: 
+  - Ectomorph: `Weight (lbs) × 20`
+  - Mesomorph: `Weight (lbs) × 18`
+  - Endomorph: `Weight (lbs) × 16`
+- **Add Calorie Surplus**: +500 calories/day to support muscle growth.
+
+For example:
+If you are an ectomorph weighing 150 lbs and want to gain muscle in 3 months:
+```
+Base Calories = 150 × 20 = 3000
+Total Calories = 3000 + 500 = 3500 calories/day
+```
+
+### 2. **Workout Generation**
+The workout schedule is based on a "Push-Pull-Legs" split:
+- **Push Day (Chest, Shoulders, Triceps)**:
+  - 3 Chest Exercises
+  - 1 Shoulder Exercise
+  - 2 Triceps Exercises
+- **Pull Day (Back, Biceps)**:
+  - 4 Back Exercises
+  - 2 Biceps Exercises
+- **Leg Day**:
+  - 4 Leg Exercises
+
+Each workout is formatted with appropriate sets and reps based on the user's body type:
+- **Ectomorph**: 3 sets of 8-10 reps
+- **Mesomorph**: 4 sets of 10-12 reps
+- **Endomorph**: 5 sets of 12-15 reps
+
+### 3. **Input File Format**
+Exercises are loaded from a file named `Workout_List.txt`. The file should follow this format:
 ```
 Chest
 1. Bench Press
-2. Incline Bench Press
+2. Incline Dumbbell Press
 ...
-
-Back
-1. Pull-Ups
-2. Deadlifts
+Shoulders
+1. Overhead Press
+2. Lateral Raises
 ...
 ```
+Ensure each category is followed by numbered exercises.
 
-### Steps to Run
-1. Clone or copy the script into a Python file, e.g., `bodyworkout.py`.
-2. Open a terminal and navigate to the directory containing `bodyworkout.py` and `Workout_List.txt`.
-3. Run the program using:
-   ```
-   python3 bodyworkout.py
-   ```
-4. Follow the prompts:
-   - Press Enter to start.
-   - Review the descriptions of body types.
-   - Enter your body type (1 for Ectomorph, 2 for Mesomorph, or 3 for Endomorph).
-5. The program will display a workout schedule based on your selection.
+---
 
-### Example Output
+## How to Run
+
+### Prerequisites
+- Python 3.6 or higher installed.
+- A `Workout_List.txt` file containing categorized exercises.
+
+### Steps
+1. Clone or download the project.
+2. Place a properly formatted `Workout_List.txt` file in the project directory.
+3. Run the program:
+   ```bash
+   make run
+   ```
+4. Follow the interactive prompts to input your body type, weight, and muscle gain duration.
+
+### Clean Up
+To remove Python-generated files (`__pycache__` and `.pyc` files):
+```bash
+make clean
 ```
-Hello, welcome to Rick Kabuto's Body Workout Generator. Please Hit Enter to continue
 
-1. Ectomorph:
-   - Naturally lean with a fast metabolism, making it hard to gain weight or muscle.
-   ...
+---
 
-Enter your body type (1 for Ectomorph, 2 for Mesomorph, 3 for Endomorph): 1
+## Technical Highlights
+
+### Key Functions
+1. **`calculate_calorie_formula`**:
+   - Computes daily caloric needs based on body type, weight, and goals.
+
+2. **`generate_schedule`**:
+   - Creates a workout schedule with dynamically selected exercises and personalized sets/reps.
+
+3. **`load_workouts`**:
+   - Parses `Workout_List.txt` to load exercises into categories.
+
+4. **`main`**:
+   - Manages user interaction and orchestrates the program.
+
+### Randomization for Variety
+The `random.sample` method ensures that exercises are selected randomly, making every generated schedule unique.
+
+### Error Handling
+- Checks for missing or malformed `Workout_List.txt` file.
+- Validates user input for body type and fitness goals.
+
+---
+
+## Example Output
+```
+To gain 10-15 pounds of muscle in 3 months:
+1. Calculate your base calorie needs: 150 (lbs) × 20 = 3000 calories/day.
+2. Add a surplus of approximately 500 calories/day for muscle growth.
+3. Total Daily Calorie Intake: 3500 calories/day.
+4. Aim for a protein intake of 1–1.2g per pound of body weight.
 
 Ectomorph Push Pull Legs Schedule:
 
 Push (Mon/Thu):
   - Bench Press (3 sets of 8-10 reps)
-  - Incline Bench Press (3 sets of 8-10 reps)
-  ...
+  - Incline Dumbbell Press (3 sets of 8-10 reps)
+  - Overhead Press (3 sets of 8-10 reps)
+  - Skull Crushers (3 sets of 8-10 reps)
+  - Tricep Dips (3 sets of 8-10 reps)
+
+Pull (Tue/Fri):
+  - Pull-Ups (3 sets of 8-10 reps)
+  - Barbell Rows (3 sets of 8-10 reps)
+  - Lat Pulldowns (3 sets of 8-10 reps)
+  - Dumbbell Curls (3 sets of 8-10 reps)
+  - Hammer Curls (3 sets of 8-10 reps)
+
+Legs (Wed/Sat):
+  - Squats (3 sets of 8-10 reps)
+  - Leg Press (3 sets of 8-10 reps)
+  - Romanian Deadlifts (3 sets of 8-10 reps)
+  - Calf Raises (3 sets of 8-10 reps)
 
 Sunday: Rest or Active Recovery
 ```
 
-## Notes
-- Ensure the `Workout_List.txt` file is properly formatted to avoid errors.
-- If the file is missing or incorrectly formatted, the program will display an error message.
-- The workout schedule is randomized, so different runs may generate different schedules.
+---
 
+## Future Improvements
+- Add export functionality to save schedules as PDFs or CSVs.
+- Integrate a graphical user interface (GUI).
+- Enhance the calorie calculator with more precise metabolic rate formulas.
+
+---
+
+## License
+This project is open-source and available under the MIT License.
