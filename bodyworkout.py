@@ -4,16 +4,14 @@ def calculate_calorie_formula(body_type, weight, months):
     """
     Generate the calorie formula based on body type, weight, and muscle gain goals.
     """
-    # General guidelines for calorie surplus
     body_type_multiplier = {
-        "ectomorph": 20,  # Higher multiplier for faster metabolism
-        "mesomorph": 18,  # Moderate multiplier
-        "endomorph": 16   # Lower multiplier due to slower metabolism
+        "ectomorph": 20,  
+        "mesomorph": 18,  
+        "endomorph": 16   
     }
 
-    # Approximate total calorie intake per day
     daily_calories = weight * body_type_multiplier[body_type]
-    surplus_calories = 500  # Approximate surplus for muscle gain
+    surplus_calories = 500  
     total_calories = daily_calories + surplus_calories
 
     return f"""
@@ -25,7 +23,6 @@ To gain 10-15 pounds of muscle in {months} months:
 """
 
 def generate_schedule(body_type, weight, months, workout_list):
-    # Calorie formula at the top
     calorie_formula = calculate_calorie_formula(body_type, weight, months)
 
     body_type_sets = {
@@ -36,26 +33,21 @@ def generate_schedule(body_type, weight, months, workout_list):
 
     schedule = {"Push": [], "Pull": [], "Legs": []}
 
-    # Distribute exercises for Push Day
     chest_exercises = random.sample(workout_list["Chest"], min(3, len(workout_list["Chest"])))
     shoulder_exercises = random.sample(workout_list["Shoulders"], min(1, len(workout_list["Shoulders"])))
     tricep_exercises = random.sample(workout_list["Tricep"], min(2, len(workout_list["Tricep"])))
     schedule["Push"] = chest_exercises + shoulder_exercises + tricep_exercises
 
-    # Distribute exercises for Pull Day
     back_exercises = random.sample(workout_list["Back"], min(4, len(workout_list["Back"])))
     bicep_exercises = random.sample(workout_list["Bicep"], min(2, len(workout_list["Bicep"])))
     schedule["Pull"] = back_exercises + bicep_exercises
 
-    # Distribute exercises for Leg Day
     leg_exercises = random.sample(workout_list["Legs"], min(4, len(workout_list["Legs"])))
     schedule["Legs"] = leg_exercises
 
-    # Get sets and reps for the chosen body type
     sets = body_type_sets[body_type]["sets"]
     reps = body_type_sets[body_type]["reps"]
 
-    # Format the schedule
     formatted_schedule = f"{calorie_formula}\n{body_type.capitalize()} Push Pull Legs Schedule:\n"
     for day, exercises in zip(["Push (Mon/Thu)", "Pull (Tue/Fri)", "Legs (Wed/Sat)"], schedule.values()):
         formatted_schedule += f"\n{day}:\n"
