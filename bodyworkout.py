@@ -1,31 +1,35 @@
 import random
 
-def calculate_calorie_formula(body_type, weight, months):
+def compute_caloric_needs(body_type, weight, months):
     """
-    Generate the calorie formula based on body type, weight, and muscle gain goals.
+    Generate the caloric needs formula based on body type, weight, and muscle growth goals.
     """
+
     body_type_multiplier = {
         "ectomorph": 20,  
-        "mesomorph": 18,  
+        "mesomorph": 18,
         "endomorph": 16   
     }
 
-    daily_calories = weight * body_type_multiplier[body_type]
-    surplus_calories = 500  
-    total_calories = daily_calories + surplus_calories
+    base_calories = weight * body_type_multiplier[body_type]
+    surplus_calories = 500
+    total_calories = base_calories + surplus_calories
+
+    protein_min = weight * 1.0
+    protein_max = weight * 1.2
 
     return f"""
 To gain 10-15 pounds of muscle in {months} months:
-1. Calculate your base calorie needs: {weight} (lbs) x {body_type_multiplier[body_type]} = {daily_calories} calories/day.
+1. Calculate your base calorie needs: {weight} (lbs) x {body_type_multiplier[body_type]} = {base_calories} calories/day.
 2. Add a surplus of approximately 500 calories/day for muscle growth.
 3. Total Daily Calorie Intake: {total_calories} calories/day.
-4. Aim for a protein intake of 1–1.2g per pound of body weight.
+4. Aim for a protein intake of {protein_min:.1f}–{protein_max:.1f} grams per day.
 """
 
-def generate_schedule(body_type, weight, months, workout_list):
-    calorie_formula = calculate_calorie_formula(body_type, weight, months)
+def generate_workout_plan(body_type, weight, months, workout_list):
+    caloric_needs = compute_caloric_needs(body_type, weight, months)
 
-    body_type_sets = {
+    body_type_workouts = {
         "ectomorph": {"sets": 3, "reps": "8-10"},
         "mesomorph": {"sets": 4, "reps": "10-12"},
         "endomorph": {"sets": 5, "reps": "12-15"}
@@ -45,10 +49,10 @@ def generate_schedule(body_type, weight, months, workout_list):
     leg_exercises = random.sample(workout_list["Legs"], min(4, len(workout_list["Legs"])))
     schedule["Legs"] = leg_exercises
 
-    sets = body_type_sets[body_type]["sets"]
-    reps = body_type_sets[body_type]["reps"]
+    sets = body_type_workouts[body_type]["sets"]
+    reps = body_type_workouts[body_type]["reps"]
 
-    formatted_schedule = f"{calorie_formula}\n{body_type.capitalize()} Push Pull Legs Schedule:\n"
+    formatted_schedule = f"{caloric_needs}\n{body_type.capitalize()} Push Pull Legs Schedule:\n"
     for day, exercises in zip(["Push (Mon/Thu)", "Pull (Tue/Fri)", "Legs (Wed/Sat)"], schedule.values()):
         formatted_schedule += f"\n{day}:\n"
         for exercise in exercises:
@@ -127,7 +131,7 @@ def main():
         print("Error: Workout list file not found.")
         return
 
-    schedule = generate_schedule(body_type, weight, months, workout_list)
+    schedule = generate_workout_plan(body_type, weight, months, workout_list)
     print(schedule)
 
 if __name__ == "__main__":
