@@ -112,35 +112,8 @@ The `random.sample` method ensures that exercises are selected randomly, making 
 
 ## Example Output
 ```
-To gain 10-15 pounds of muscle in 3 months:
-1. Calculate your base calorie needs: 150 (lbs) × 20 = 3000 calories/day.
-2. Add a surplus of approximately 500 calories/day for muscle growth.
-3. Total Daily Calorie Intake: 3500 calories/day.
-4. Aim for a protein intake of 1–1.2g per pound of body weight.
+<img width="676" alt="Screenshot 2025-01-21 at 12 33 20 PM" src="https://github.com/user-attachments/assets/baffbf35-97f3-4bc0-b55f-412d71ea9a7a" />
 
-Ectomorph Push Pull Legs Schedule:
-
-Push (Mon/Thu):
-  - Bench Press (3 sets of 8-10 reps)
-  - Incline Dumbbell Press (3 sets of 8-10 reps)
-  - Overhead Press (3 sets of 8-10 reps)
-  - Skull Crushers (3 sets of 8-10 reps)
-  - Tricep Dips (3 sets of 8-10 reps)
-
-Pull (Tue/Fri):
-  - Pull-Ups (3 sets of 8-10 reps)
-  - Barbell Rows (3 sets of 8-10 reps)
-  - Lat Pulldowns (3 sets of 8-10 reps)
-  - Dumbbell Curls (3 sets of 8-10 reps)
-  - Hammer Curls (3 sets of 8-10 reps)
-
-Legs (Wed/Sat):
-  - Squats (3 sets of 8-10 reps)
-  - Leg Press (3 sets of 8-10 reps)
-  - Romanian Deadlifts (3 sets of 8-10 reps)
-  - Calf Raises (3 sets of 8-10 reps)
-
-Sunday: Rest or Active Recovery
 ```
 
 ---
