@@ -145,12 +145,10 @@ Sunday: Rest or Active Recovery
 
 ---
 
+
+
 ## Future Improvements
 - Add export functionality to save schedules as PDFs or CSVs.
-- Integrate a graphical user interface (GUI).
 - Enhance the calorie calculator with more precise metabolic rate formulas.
 
----
 
-## License
-This project is open-source and available under the MIT License.
