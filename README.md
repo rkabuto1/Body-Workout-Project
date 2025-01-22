@@ -111,12 +111,11 @@ The `random.sample` method ensures that exercises are selected randomly, making 
 ---
 
 ## Example Output
-```
+
+
 <img width="676" alt="Screenshot 2025-01-21 at 12 33 20 PM" src="https://github.com/user-attachments/assets/baffbf35-97f3-4bc0-b55f-412d71ea9a7a" />
 
-```
 
----
 
 
 
