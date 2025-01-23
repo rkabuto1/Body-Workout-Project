@@ -1,6 +1,6 @@
 run:
 	@echo "Running Rick Kabuto's Body Workout Generator..."
-	@python3 bodyworkout.py
+	@python3 main.py
 
 clean:
 	@echo "Cleaning up Python cache and compiled files..."
